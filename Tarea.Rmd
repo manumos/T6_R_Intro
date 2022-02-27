@@ -22,6 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## CONTENIDOS
 Esta es mi tarea en la que creo un documento html a  partir de R.
+Esta linea es una actualizacion del documento para subirlo a github.
 
 ## Al correr con Knit me da el siguiente error 
 
