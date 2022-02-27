@@ -1,9 +1,10 @@
 ---
-title: "Ejcucion tarea"
+title: "Ejecucion tarea"
 author: "Manuela Moscoso"
-date: "`r Sys.Date()`"
-output: html_document:
-self_contained: true
+date: "26/02/2022"
+output: 
+  html_document:
+    self_contained: true
     fig_height: 6
     fig_width: 8
     theme: journal
@@ -14,26 +15,30 @@ self_contained: true
       collapsed: no
       smooth_scroll: yes
       
-
+---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## 1
+
+Crear un identificador de nombre "ciudad" y asigne como valor el nombre de alguna ciudad
 
 
-```{r}
-# Crear un identificador de nombre "ciudad" y asigne 
-# como valor el nombre de alguna ciudad
+```{rmuestra, echo = TRUE}
 
 ciudad<-"Cuenca"
 
-# Crear un identificador de nombre "pais_andes" y asigne como valor 
-# los nombres de los países por donde cruza la cordillera de Los Andes
+```
+## 2
 
+Crear un identificador de nombre "pais_andes" y asigne como valor los nombres de los países por donde cruza la cordillera de Los Andes
+```{rmuestra, echo = TRUE}
 pais_andes<-c("Ecuador","Perú","Colombia","Bolivia","Venezuela","Chile","Argentina")
+```
+## 3
 
-# Crear un dataframe con 12 eventos (files) y 5 variables (columnas), 
-# cada columna debe tener diferentes tipos de datos (entero, decimal, 
-# caracter, logico)
+Crear un dataframe con 12 eventos (files) y 5 variables (columnas), cada columna debe tener diferentes tipos de datos (entero, decimal,  caracter, logico)
+```{rmuestra, echo = TRUE}
 provincias_ecuador<-data.frame(identificador=seq(1:12),
                               costa_sierra=as.factor(c(rep(0,6),rep(1,6))),
                               provincias=c("Esmerdaldas","Manabi","Santa Elena","Guayas",
@@ -42,22 +47,20 @@ provincias_ecuador<-data.frame(identificador=seq(1:12),
                               area=c(14.893,19.427,3.696,	15.927,5.879,
                                      
                                      7.100,3.669,9.692,11.066,8.189,3.790,4.611)) #x10**3 km2
-
-
-# Cargue el dataset "DNase" e identifique su estructura. Extraiga (subset) 
-DNA=data.frame(DNase)
-
-# los datos que cumplan con las condiciones de: 
-install.packages("dplyr")
-
-#   1. "conc" (concentracion) entre 0.1 y 0.2
-first_filter<-filter(DNA,conc<0.2 & conc>0.1)
-library(dplyr)
-
-#   2. "Run" diferente a 2, "conc" mayor a 0.2 y "density" menor o igual a 1.0
-second_filter<-filter(DNA,Run !=2 & conc>0.2 & density <=1)
-
-conc<-filter(data)
 ```
 
+## 4
+
+Cargue el dataset "DNase" e identifique su estructura. Extraiga (subset) los datos que cumplan con las condiciones de:  
+1. "conc" (concentracion) entre 0.1 y 0.2
+2. "Run" diferente a 2, "conc" mayor a 0.2 y "density" menor o igual a 1.0
+
+```{rmuestra, echo = TRUE}
+DNA=data.frame(DNase)
+install.packages("dplyr")
+first_filter<-filter(DNA,conc<0.2 & conc>0.1)
+library(dplyr)
+second_filter<-filter(DNA,Run !=2 & conc>0.2 & density <=1)
+conc<-filter(data)
+```
 
